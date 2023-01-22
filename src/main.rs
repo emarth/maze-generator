@@ -147,13 +147,13 @@ fn make_graph(width: usize, height: usize, nodes: &mut Vec<usize>, edges: &mut V
 }
 
 fn main() {
-
+    // parameters
     let args: Vec<String> = env::args().collect();
-
-    let width: usize = *&args[0].parse().unwrap();
-    let height: usize = *&args[1].parse().unwrap();
+    let width: usize = args[1].parse::<usize>().unwrap();
+    let height: usize = args[2].parse::<usize>().unwrap();
     let sp : usize = 3;
 
+    // maze
     let mut nodes: Vec<usize> = Vec::new();
     let mut edges : Vec<Edge> = Vec::new();
     let mut tree : Vec<Edge> = Vec::new();
