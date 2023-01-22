@@ -1,4 +1,5 @@
 use std::collections::BinaryHeap;
+use std::env;
 
 extern crate rand;
 
@@ -147,8 +148,10 @@ fn make_graph(width: usize, height: usize, nodes: &mut Vec<usize>, edges: &mut V
 
 fn main() {
 
-    let width: usize = 30;
-    let height: usize = 15;
+    let args: Vec<String> = env::args().collect();
+
+    let width: usize = *&args[0].parse().unwrap();
+    let height: usize = *&args[1].parse().unwrap();
     let sp : usize = 3;
 
     let mut nodes: Vec<usize> = Vec::new();
